@@ -16,9 +16,6 @@ function clockSharp (){
     let amPmCheck = time.getHours().toString(); // создаю вторую переменную с получением времени что бы дальше ее кидать на проверку 
     /* Что бы время не было похоже на 1:2:3 , добавляем проверку и подкидываем
      еще '0' что бы получилось 01:02:03*/
-    if(hours === '0') {
-        hours = '0'+ '0';
-    }
     if(hours < 10){
         hours = '0' + hours;
     }
@@ -34,6 +31,10 @@ function clockSharp (){
     }else {
         ampm.textContent = 'PM';
     }
+   
+
+
+
    /* собираем часы вместе ¯\_(ツ)_/¯ закидывая 
    их в clockString и тоже самое с цветом */
     let clockString = hours +':' + minutes + ':' + seconds;
