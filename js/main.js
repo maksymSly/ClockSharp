@@ -17,6 +17,8 @@ function clockSharp (){
      еще '0' что бы получилось 01:02:03*/
     if(hours === '0') {
         hours = '0'+ '0';
+    }else{
+        hours = '0' + hours;
     }
     if(minutes < 10){
         minutes = '0'+ minutes;
