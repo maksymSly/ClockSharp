@@ -6,18 +6,20 @@
 
 let clock = document.getElementById('clock'); // вытаскиваем элемент с id: clock
 let color = document.getElementById('color');// вытаскиваем элемент с id: color
-
+let amPm = document.getElementById('ampm'); // вытаскиваем элемент с id : ampm
 
 function clockSharp (){
     let time = new Date(); // создаем объект типа Date();
     let hours = (time.getHours() % 12).toString(); // тут вроде все izi. Но % 12 делаем для того что бы время было 12-ти часовое.
     let minutes = time.getMinutes().toString();
     let seconds = time.getSeconds().toString();
+    let amPmCheck = time.getHours().toString(); // создаю вторую переменную с получением времени что бы дальше ее кидать на проверку 
     /* Что бы время не было похоже на 1:2:3 , добавляем проверку и подкидываем
      еще '0' что бы получилось 01:02:03*/
     if(hours === '0') {
         hours = '0'+ '0';
-    }else{
+    }
+    if(hours < 10){
         hours = '0' + hours;
     }
     if(minutes < 10){
@@ -25,6 +27,12 @@ function clockSharp (){
     }
     if(seconds < 10){
         seconds = '0'+ seconds;
+    }
+     //проверяем время и закидываем в textContent результат;
+    if(amPmCheck < 12){
+        ampm.textContent = 'AM';
+    }else {
+        ampm.textContent = 'PM';
     }
    /* собираем часы вместе ¯\_(ツ)_/¯ закидывая 
    их в clockString и тоже самое с цветом */
