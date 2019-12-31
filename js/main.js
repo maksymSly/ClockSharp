@@ -1,4 +1,5 @@
-
+//Украл идею у https://github.com/saadq , а тут просто дополняю ее
+//и делаю что то новое для себя(учусь короче)
 /*Я не уверен что тут нужно вообще хоть что то объяснять, ну да ладно
 ща чёт напишем ¯\_(ツ)_/¯
 */
@@ -7,6 +8,8 @@
 let clock = document.getElementById('clock'); // вытаскиваем элемент с id: clock
 let color = document.getElementById('color');// вытаскиваем элемент с id: color
 let amPm = document.getElementById('ampm'); // вытаскиваем элемент с id : ampm
+let colorBtnRed = document.getElementById('colorBtnRed');
+let colorBtnWhite = document.getElementById('colorBtnWhite');
 
 function clockSharp (){
     let time = new Date(); // создаем объект типа Date();
@@ -45,5 +48,15 @@ function clockSharp (){
     // тут заменяем стиль body , а точнее его фон
     document.body.style.background = colorString;
 }
+
+function changeColorRed(){
+ document.body.style.color = 'Red';
+}
+function changeColorWhite(){
+    document.body.style.color = 'White';
+   }
+
 // ставим интервал 1000 милисекунд и вызываем нашу функцию clockSharp
+clockSharp();
 setInterval(clockSharp, 1000);
+
